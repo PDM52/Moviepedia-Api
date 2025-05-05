@@ -199,7 +199,7 @@ public class MovieController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PutMapping("/{movieId}/actors/{actorId}") // <--------- Add the actor to movie
+    @PutMapping("/{movieId}/actors/{actorId}")
     public ResponseEntity addActorToMovie(@PathVariable Long movieId, @PathVariable Long actorId) {
         Optional<Movie> movieOpt = movieRepository.findById(movieId);
         Optional<Person> actorOpt = peopleRepository.findById(actorId);
@@ -215,7 +215,7 @@ public class MovieController {
         }
     }
 
-    @DeleteMapping("/{movieId}/actors/{actorId}") // <--------- Remove the actor from movir
+    @DeleteMapping("/{movieId}/actors/{actorId}")
     public ResponseEntity removeActorFromMovie(@PathVariable Long movieId, @PathVariable Long actorId) {
         Optional<Movie> movieOpt = movieRepository.findById(movieId);
         Optional<Person> actorOpt = peopleRepository.findById(actorId);
